@@ -7,14 +7,14 @@ function printCongratz() {
 echo "How many files are there in the directory of script ? :"
 read userInput
 
-noOfLines=`cat guessinggame.sh | wc -l`
+noOfFiles=`find . -maxdepth 1 -type f | wc -l`
 
-while [[ ${noOfLines} -ne ${userInput} ]]
+while [[ ${noOfFiles} -ne ${userInput} ]]
 do
-	if [[ ${noOfLines} -gt ${userInput} ]]
+	if [[ ${noOfFiles} -gt ${userInput} ]]
 	then
 		echo "Guess higher"
-	else [[ ${noOfLines} -lt ${userInput} ]]
+	else [[ ${noOfFiles} -lt ${userInput} ]]
 		echo "Guess lower"
 	fi
 
